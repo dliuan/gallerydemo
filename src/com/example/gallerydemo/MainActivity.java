@@ -26,35 +26,38 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		gallery=(SlideOnePageGallery) this.findViewById(R.id.mygallery);
 		gallery.setAdapter(new ImageAdapter(this));
+		System.out.println("测试内容");
 		System.out.println("添加新内容");
+		System.out.println("添加新内容B");
+		System.out.println("测试内容A");
 	}
 
 	
 	public class ImageAdapter extends BaseAdapter {
 
-        Context mContext;        //上下文对象
+        Context mContext;        //涓婁笅鏂囧璞�
         
-        //构造方法
+        //鏋勯�鏂规硶
         public ImageAdapter(Context context) {
             this.mContext = context;
         }
         
-        //获取图片的个数
+        //鑾峰彇鍥剧墖鐨勪釜鏁�
         public int getCount() {
             return mImageResourceIds.length;
         }
 
-        //获取图片在库中的位置
+        //鑾峰彇鍥剧墖鍦ㄥ簱涓殑浣嶇疆
         public Object getItem(int position) {
             return mImageResourceIds[position];
         }
 
-        //获取图片在库中的位置
+        //鑾峰彇鍥剧墖鍦ㄥ簱涓殑浣嶇疆
         public long getItemId(int position) {
             return position;
         }
 
-        //获取适配器中指定位置的视图对象
+        //鑾峰彇閫傞厤鍣ㄤ腑鎸囧畾浣嶇疆鐨勮鍥惧璞�
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView = new ImageView(mContext);
             imageView.setImageResource(mImageResourceIds[position]);
