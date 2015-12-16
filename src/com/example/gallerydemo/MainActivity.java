@@ -26,34 +26,35 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		gallery=(SlideOnePageGallery) this.findViewById(R.id.mygallery);
 		gallery.setAdapter(new ImageAdapter(this));
+		System.out.println("æ·»åŠ æ–°å†…å®¹");
 	}
 
 	
 	public class ImageAdapter extends BaseAdapter {
 
-        Context mContext;        //ÉÏÏÂÎÄ¶ÔÏó
+        Context mContext;        //ä¸Šä¸‹æ–‡å¯¹è±¡
         
-        //¹¹Ôì·½·¨
+        //æ„é€ æ–¹æ³•
         public ImageAdapter(Context context) {
             this.mContext = context;
         }
         
-        //»ñÈ¡Í¼Æ¬µÄ¸öÊı
+        //è·å–å›¾ç‰‡çš„ä¸ªæ•°
         public int getCount() {
             return mImageResourceIds.length;
         }
 
-        //»ñÈ¡Í¼Æ¬ÔÚ¿âÖĞµÄÎ»ÖÃ
+        //è·å–å›¾ç‰‡åœ¨åº“ä¸­çš„ä½ç½®
         public Object getItem(int position) {
             return mImageResourceIds[position];
         }
 
-        //»ñÈ¡Í¼Æ¬ÔÚ¿âÖĞµÄÎ»ÖÃ
+        //è·å–å›¾ç‰‡åœ¨åº“ä¸­çš„ä½ç½®
         public long getItemId(int position) {
             return position;
         }
 
-        //»ñÈ¡ÊÊÅäÆ÷ÖĞÖ¸¶¨Î»ÖÃµÄÊÓÍ¼¶ÔÏó
+        //è·å–é€‚é…å™¨ä¸­æŒ‡å®šä½ç½®çš„è§†å›¾å¯¹è±¡
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView = new ImageView(mContext);
             imageView.setImageResource(mImageResourceIds[position]);
